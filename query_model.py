@@ -38,9 +38,11 @@ def main():
     model = gensim.models.Word2Vec.load("w2v_model_4_256_5_50_100_1e-06_10_model.pkl")
     kmer_line_nums = []
     kmer_seqs = []
-    random.seed(2)
-    for i in range(5):
+    num_seq_comparing = 5
+    random.seed(1)
+    for i in range(num_seq_comparing):
         # random nubmers at seed 1: 17611 8271 33432 15455 64937
+        # TODO make sure that I am not generating any duplicates
         kmer_line_nums.append(
             random.randrange(68940)
         )  # 68940 is the number of sequences in the original fasta
@@ -51,15 +53,15 @@ def main():
             if i in kmer_line_nums:
                 kmer_seqs.append(line)
 
-    with open("our_matches.json", "w") as out_file:
+    with open("matches.json", "w") as out_file:
         # printing the json structure of this document piecemeal so that if it stops early, we still have partial data
         print("[", file=out_file)
-        for kmer_seq in kmer_seqs:
+        for i, kmer_seq in enumerate(kmer_seqs):
             kmer_avg_vector = avg_seq_vector(kmer_seq.split(), model=model, num_features=256)
             with open("uniprot_sprot_4_kmers.csv", "r") as kmer_file, open("log.errors", "w") as error:
                 num_scores_to_save = 100
                 scores = [{"score": 0}] * num_scores_to_save
-                for i, line in enumerate(kmer_file):
+                for line in kmer_file:
                     try:
                         kmer_2_avg_vector = avg_seq_vector(line.split(), model=model, num_features=256)
                     # this will get key errors when it encounters kmers that it has not saved
@@ -90,9 +92,6 @@ def main():
                         # sort the list and then remove the smallest score
                         scores = sorted(scores, key=lambda k: k["score"], reverse=True)[0 : num_scores_to_save - 1]
 
-                    # if i > 20:
-                    #     break
-
                 print(
                     json.dumps(
                         {
@@ -102,7 +101,7 @@ def main():
                         indent=2,
                     )
                     # adding the comma manually, but not to the last item
-                    + ("," if (i - 1) != num_scores_to_save else ""),
+                    + ("," if (i + 1) != num_seq_comparing else ""),
                     file=out_file,
                 )
 

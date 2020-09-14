@@ -25,8 +25,10 @@ def find_id(seq):
 def main():
     num_scores_to_save = 10
     ending_json = list()
-    with open("our_matches.json", "r") as our_matches, open("our_matches_formatted.json", "w") as formatted:
-        data = json.load(our_matches)
+    with open("matches.json", "r") as matches, open(
+        "matches_formatted.json", "w"
+    ) as formatted:
+        data = json.load(matches)
         # for each sequence, find the top num_scores_to_save result's and their IDs
         for seq in data:
             # TODO this could be done more efficiently, but pragmatically, it won't save much more time
@@ -35,9 +37,7 @@ def main():
             for filtered_seq in filtered_seqs:
                 filtered_seq["id"] = find_id(filtered_seq["seq"])
 
-            ending_json.append(
-                {"original_id": find_id(seq["original_seq"]), "matches": filtered_seqs}
-            )
+            ending_json.append({"original_id": find_id(seq["original_seq"]), "original_seq": seq["original_seq"], "matches": filtered_seqs})
         print(json.dumps(ending_json, indent=2), file=formatted)
 
 

@@ -10,7 +10,7 @@ def make_kmers(seq, k):
 
 def main():
     with open("exp_protein_sequences.fasta", "r") as in_file, open(
-        "first_run.csv", "w"
+        "uniprot_sprot_4_kmers.csv", "w"
     ) as out_file:
         for i, line in enumerate(in_file):
             # skipping ID lines for now. They are readded later.
