@@ -11,7 +11,9 @@ import joblib
 
 assert gensim.models.word2vec.FAST_VERSION > -1
 
-logging.basicConfig(format="%(asctime)s : %(levelname)s : %(message)s", level=logging.INFO)
+logging.basicConfig(
+    format="%(asctime)s : %(levelname)s : %(message)s", level=logging.INFO
+)
 
 n_cores = 4
 seed = 423
@@ -28,7 +30,7 @@ epochs = 5
 
 name = "uniprot_sprot"
 
-# This is not called...?
+# This is not called?
 # ids_fn = f"{name}_{k}_ids.pkl"
 kmers_fn = f"{name}_{k}_kmers.csv"
 model_fn = f"w2v_model_{k}_{d}_{epochs}_{w}_{neg_samps}_{str(samp_freq).replace('0.','')}_{n_min}_model.pkl"

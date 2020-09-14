@@ -1,16 +1,21 @@
+"""Finds the cosine similarity between a random subset of sequences and all other sequences
+"""
+
 import random
+import json
+import warnings
 import gensim
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
-# get random sentences.
-# compare them to the rest of the sentences
-# convert top 10 sentences to AA and find uniprot code
-# convert chosen original sentence and see what it compares to on blast
+# some of our imports have a lot of deprication warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
 def kmers_to_seq(kmers):
-    # we want kmer 0, 4, 8, etc
+    """convers kmers to a sequence
+    Example: ["ACDEF", "CDEFG", "DEFGH"] becomes "ACDEFGH"
+    """
     seq = ""
     for kmer in kmers:
         seq += kmer[0]
@@ -19,15 +24,13 @@ def kmers_to_seq(kmers):
 
 
 def avg_seq_vector(words, model, num_features):
-    # function to average all words vectors in a given paragraph
+    """averages all word (kmers) vectors in a given paragraph (sequence)"""
     feature_vec = np.zeros((num_features,), dtype="float32")
-    nwords = 0
 
     for word in words:
-        nwords = nwords + 1
         feature_vec = np.add(feature_vec, model[word])
 
-    feature_vec = np.divide(feature_vec, nwords)
+    feature_vec = np.divide(feature_vec, len(words))
     return feature_vec
 
 
@@ -35,49 +38,75 @@ def main():
     model = gensim.models.Word2Vec.load("w2v_model_4_256_5_50_100_1e-06_10_model.pkl")
     kmer_line_nums = []
     kmer_seqs = []
-    random.seed(1)
+    random.seed(2)
     for i in range(5):
         # random nubmers at seed 1: 17611 8271 33432 15455 64937
-        kmer_line_nums.append(random.randrange(68940))
+        kmer_line_nums.append(
+            random.randrange(68940)
+        )  # 68940 is the number of sequences in the original fasta
 
-    prev_line = ""
-    with open("uniprot_sprot_4_kmers.csv", "r") as f:
-        for i, line in enumerate(f):
+    # get all of the kmer-ed sequences
+    with open("uniprot_sprot_4_kmers.csv", "r") as kmer_file:
+        for i, line in enumerate(kmer_file):
             if i in kmer_line_nums:
-                kmer_seqs.append({"seq": line, "id": )
-            prev_line = ""
+                kmer_seqs.append(line)
 
-    for kmer_seq in kmer_seqs:
-        test_kmer_avg_vector = avg_seq_vector(kmer_seq.split(), model=model, num_features=256)
-        with open("uniprot_sprot_4_kmers.csv", "r") as f, open("log.errors", 'w') as error:
-            num_scores_to_save = 100
-            scores = [{"score": 0}] * num_scores_to_save
-            for i, line in enumerate(f):
-                try:
-                    kmer_2_avg_vector = avg_seq_vector(line.split(), model=model, num_features=256)
-                # this will get key errors when it encounters kmers that it has not saved
-                # TODO see which one's it is not saving and look into why
-                except KeyError as e:
-                    print(e, file=error)
-                    continue
+    with open("our_matches.json", "w") as out_file:
+        # printing the json structure of this document piecemeal so that if it stops early, we still have partial data
+        print("[", file=out_file)
+        for kmer_seq in kmer_seqs:
+            kmer_avg_vector = avg_seq_vector(kmer_seq.split(), model=model, num_features=256)
+            with open("uniprot_sprot_4_kmers.csv", "r") as kmer_file, open("log.errors", "w") as error:
+                num_scores_to_save = 100
+                scores = [{"score": 0}] * num_scores_to_save
+                for i, line in enumerate(kmer_file):
+                    try:
+                        kmer_2_avg_vector = avg_seq_vector(line.split(), model=model, num_features=256)
+                    # this will get key errors when it encounters kmers that it has not saved
+                    except KeyError as err:
+                        print(err, file=error)
+                        continue
 
-                try:
-                    kmer_similarity = cosine_similarity(
-                        test_kmer_avg_vector.reshape(1, -1), kmer_2_avg_vector.reshape(1, -1)
-                    )[0][0]
-                except ValueError as e:
-                    print(e, file=error)
+                    try:
+                        # reshaping the vector here because cosine_similarity was
+                        # complaining about our vector's dimensions
+                        # I _think_ this if fine but,
+                        # TODO I should double check the reshape
+                        kmer_similarity = cosine_similarity(
+                            kmer_avg_vector.reshape(1, -1),
+                            kmer_2_avg_vector.reshape(1, -1),
+                        )[0][0]
+                    except ValueError as err:
+                        print(err, file=error)
 
-                if kmer_similarity > scores[0]["score"]:
-                    scores.append({"score": kmer_similarity, "seq": kmers_to_seq(line.split())})
-                    # this is super inefficient, but it should work and developer time > compute time
-                    # sort the list and then remove the smallest score
-                    scores = sorted(scores, key=lambda k: k["score"])[1:num_scores_to_save]
+                    if kmer_similarity > scores[-1]["score"]:
+                        scores.append(
+                            {
+                                "score": kmer_similarity,
+                                "seq": kmers_to_seq(line.split()),
+                            }
+                        )
+                        # TODO this is super inefficient, but it should work and developer time > compute time
+                        # sort the list and then remove the smallest score
+                        scores = sorted(scores, key=lambda k: k["score"], reverse=True)[0 : num_scores_to_save - 1]
 
-                # if i > 20:
-                #     break
+                    # if i > 20:
+                    #     break
 
-            print({"original_seq": kmers_to_seq(kmer_seq.split()), f"top_{num_scores_to_save}_scores": scores})
+                print(
+                    json.dumps(
+                        {
+                            "original_seq": kmers_to_seq(kmer_seq.split()),
+                            "scores": json.loads(str(scores).replace("'", '"')),
+                        },
+                        indent=2,
+                    )
+                    # adding the comma manually, but not to the last item
+                    + ("," if (i - 1) != num_scores_to_save else ""),
+                    file=out_file,
+                )
+
+        print("]", file=out_file)
 
 
 if __name__ == "__main__":
