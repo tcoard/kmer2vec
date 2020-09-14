@@ -1,0 +1,6 @@
+gensim==3.8.3
+sklearn
+numpy
+joblib
+cython
+requests

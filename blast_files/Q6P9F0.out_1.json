@@ -1,0 +1,968 @@
+{
+  "BlastOutput2": {
+    "report": {
+      "program": "blastp",
+      "version": "BLASTP 2.10.0+",
+      "reference": "Stephen F. Altschul, Thomas L. Madden, Alejandro A. Sch&auml;ffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), \"Gapped BLAST and PSI-BLAST: a new generation of protein database search programs\", Nucleic Acids Res. 25:3389-3402.",
+      "search_target": {
+        "db": "exp_protein_sequences.fasta"
+      },
+      "params": {
+        "matrix": "BLOSUM62",
+        "expect": 10,
+        "gap_open": 11,
+        "gap_extend": 1,
+        "filter": "F",
+        "cbs": 2
+      },
+      "results": {
+        "search": {
+          "query_id": "Query_1",
+          "query_title": "Q6P9F0",
+          "query_len": 684,
+          "hits": [
+            {
+              "num": 1,
+              "description": [
+                {
+                  "id": "sp|Q6P9F0|",
+                  "accession": "Q6P9F0",
+                  "title": ""
+                }
+              ],
+              "len": 684,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 1398.26,
+                  "score": 3618,
+                  "evalue": 0,
+                  "identity": 684,
+                  "positive": 684,
+                  "query_from": 1,
+                  "query_to": 684,
+                  "hit_from": 1,
+                  "hit_to": 684,
+                  "align_len": 684,
+                  "gaps": 0,
+                  "qseq": "MNPPAAFLAGRQNIGSEVEISTIEKQRKELQLLIGELKDRDKELNDMVAVHQQQLLSWEEDRQKVLTLEERCSKLEGELHKRTEIIRSLTKKVKALESNQMECQTALQKTQLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSELHNLRQIYVKQQSDLQFLNFNVENSQELIQMYDSKMEESKALDSSRDMCLSDLENNHPKVDIKREKNQKSLFKDQKFEAMLVQQNRSDKSSCDECKEKKQQIDTVFGEKSVITLSSIFTKDLVEKHNLPWSLGGKTQIEPENKITLCKIHTKSPKCHGTGVQNEGKQPSETPTLSDEKQWHDVSVYLGLTNCPSSKHPEKLDVECQDQMERSEISCCQKNEACLGESGMCDSKCCHPSNFIIEAPGHMSDVEWMSIFKPSKMQRIVRLKSGCTCSESICGTQHDSPASELIAIQDSHSLGSSKSALREDETESSSNKKNSPTSLLIYKDAPAFNEKASIVLPSQDDFSPTSKLQRLLAESRQMVTDLELSTLLPISHENLTGSATNKSEVPEESAQKNTFVSY",
+                  "hseq": "MNPPAAFLAGRQNIGSEVEISTIEKQRKELQLLIGELKDRDKELNDMVAVHQQQLLSWEEDRQKVLTLEERCSKLEGELHKRTEIIRSLTKKVKALESNQMECQTALQKTQLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSELHNLRQIYVKQQSDLQFLNFNVENSQELIQMYDSKMEESKALDSSRDMCLSDLENNHPKVDIKREKNQKSLFKDQKFEAMLVQQNRSDKSSCDECKEKKQQIDTVFGEKSVITLSSIFTKDLVEKHNLPWSLGGKTQIEPENKITLCKIHTKSPKCHGTGVQNEGKQPSETPTLSDEKQWHDVSVYLGLTNCPSSKHPEKLDVECQDQMERSEISCCQKNEACLGESGMCDSKCCHPSNFIIEAPGHMSDVEWMSIFKPSKMQRIVRLKSGCTCSESICGTQHDSPASELIAIQDSHSLGSSKSALREDETESSSNKKNSPTSLLIYKDAPAFNEKASIVLPSQDDFSPTSKLQRLLAESRQMVTDLELSTLLPISHENLTGSATNKSEVPEESAQKNTFVSY",
+                  "midline": "MNPPAAFLAGRQNIGSEVEISTIEKQRKELQLLIGELKDRDKELNDMVAVHQQQLLSWEEDRQKVLTLEERCSKLEGELHKRTEIIRSLTKKVKALESNQMECQTALQKTQLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSELHNLRQIYVKQQSDLQFLNFNVENSQELIQMYDSKMEESKALDSSRDMCLSDLENNHPKVDIKREKNQKSLFKDQKFEAMLVQQNRSDKSSCDECKEKKQQIDTVFGEKSVITLSSIFTKDLVEKHNLPWSLGGKTQIEPENKITLCKIHTKSPKCHGTGVQNEGKQPSETPTLSDEKQWHDVSVYLGLTNCPSSKHPEKLDVECQDQMERSEISCCQKNEACLGESGMCDSKCCHPSNFIIEAPGHMSDVEWMSIFKPSKMQRIVRLKSGCTCSESICGTQHDSPASELIAIQDSHSLGSSKSALREDETESSSNKKNSPTSLLIYKDAPAFNEKASIVLPSQDDFSPTSKLQRLLAESRQMVTDLELSTLLPISHENLTGSATNKSEVPEESAQKNTFVSY"
+                }
+              ]
+            },
+            {
+              "num": 2,
+              "description": [
+                {
+                  "id": "sp|E9PVD1|",
+                  "accession": "E9PVD1",
+                  "title": ""
+                }
+              ],
+              "len": 701,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 993.416,
+                  "score": 2567,
+                  "evalue": 0,
+                  "identity": 509,
+                  "positive": 576,
+                  "query_from": 1,
+                  "query_to": 684,
+                  "hit_from": 44,
+                  "hit_to": 701,
+                  "align_len": 685,
+                  "gaps": 28,
+                  "qseq": "MNPPAAFLAGRQNIGSEVEISTIEKQRKELQLLIGELKDRDKELNDMVAVHQQQLLSWEEDRQKVLTLEERCSKLEGELHKRTEIIRSLTKKVKALESNQMECQTALQKTQLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSELHNLRQIYVKQQSDLQFLNFNVENSQELIQMYDSKMEESKALDSSRDMCLSDLENNHPKVDIKREKNQKSLFKDQKFEAMLVQQNRSDKSSCDECKEKKQQIDTVFGEKSVITLSSIFTKDLVEKHNLPWSLGGKTQIEPENKITLCKIHTKSPKCHGTGVQNEGKQPSETP-TLSDEKQWHDVSVYLGLTNCPSSKHPEKLDVECQDQMERSEISCCQKNEACLGESGMCDSKCCHPSNFIIEAPGHMSDVEWMSIFKPSKMQRIVRLKSGCTCSESICGTQHDSPASELIAIQDSHSLGSSKSALREDETESSSNKKNSPTSLLIYKDAPAFNEKASIVLPSQDDFSPTSKLQRLLAESRQMVTDLELSTLLPISHENLTGSATNKSEVPEESAQKNTFVSY",
+                  "hseq": "MNP-SATLYRRQNIGSEVETSTIEKQRKELQLLIGELKDRDKELNDMVAVHQRQLLSWEEDRQKVLTLEERCSKLEGELHKRTDIIKSLMKKVKTLESNQAECQTALQKTQQQLQEMAQKATHSTLLSEDLEARNENLSSTLVDLSAQVGQLQAREQALTTMIKLKDKDIIEAVNHISDCSGKFKLLEHALRDAKMAETCVVREKQDYKQKLKALRIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELIFTVEREKRKDELLDIAKSKQDRTNSELQNLRQIYVKQQSDLQFLNFNIESSQELIQIHGLKMEEPKALECSKDMCLSDLDNNYPKIDIKRERNQKSLVKDQTFEVMLAQHNGSDKSSCDACREKKLQVNTALGEKSVIALSSLFTKDLLDKQK-SWSLGGKIQTEPENKVTLCKVHAKSPKCDGVGLPTEEKQLSETSVSLSDEKQWHDINVYLGLSSC--SKQPDRLDGDGHDRTGTSEVSCCTPNVVCIGDNDLSESKCCHPSNIIIEAPGHMTDTEWMNIFKPSRAQRIVRHKTMCTCSRSVSAMKYNSSASELIGMQPSQCVGSLKSAEREEESAALPDRRTSA------------NEK--------DDFSPTSKLQRLLAESRQMVTDLELSTLLPISCENLNRS---KLEVSEEPDEKTTLVSH",
+                  "midline": "MNP +A L  RQNIGSEVE STIEKQRKELQLLIGELKDRDKELNDMVAVHQ+QLLSWEEDRQKVLTLEERCSKLEGELHKRT+II+SL KKVK LESNQ ECQTALQKTQ QLQEMAQKATHS+LLSEDLEARNE LS+TLV+LSAQVGQLQAREQALTTMIKLKDKDIIEAVNHI+DCSGKFK+LEHALRDAKMAETC+V+EKQDYKQKLKAL+IEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDEL+FTVEREKRKDELL+IAKSKQ+RTNSEL NLRQIYVKQQSDLQFLNFN+E+SQELIQ++  KMEE KAL+ S+DMCLSDL+NN+PK+DIKRE+NQKSL KDQ FE ML Q N SDKSSCD C+EKK Q++T  GEKSVI LSS+FTKDL++K    WSLGGK Q EPENK+TLCK+H KSPKC G G+  E KQ SET  +LSDEKQWHD++VYLGL++C  SK P++LD +  D+   SE+SCC  N  C+G++ + +SKCCHPSN IIEAPGHM+D EWM+IFKPS+ QRIVR K+ CTCS S+   +++S ASELI +Q S  +GS KSA RE+E+ +  +++ S             NEK        DDFSPTSKLQRLLAESRQMVTDLELSTLLPIS ENL  S   K EV EE  +K T VS+"
+                }
+              ]
+            },
+            {
+              "num": 3,
+              "description": [
+                {
+                  "id": "sp|Q7ZVT3|",
+                  "accession": "Q7ZVT3",
+                  "title": ""
+                }
+              ],
+              "len": 627,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 41.5874,
+                  "score": 96,
+                  "evalue": 0.00395749,
+                  "identity": 60,
+                  "positive": 106,
+                  "query_from": 28,
+                  "query_to": 238,
+                  "hit_from": 252,
+                  "hit_to": 466,
+                  "align_len": 229,
+                  "gaps": 32,
+                  "qseq": "KELQLLIGELKDRDKELND-------MVAVHQQQLLSWEED----RQKVLTLEERCSKLEGELHKRTEIIRSLTKKVKALES-----NQMECQT--ALQKTQLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQRE",
+                  "hseq": "QQLQTKVSELETANRELIDKKYKSDSTIRDLKAKLTSLEEECQRSKQQVLSLRRENSALDSECHEKERLLNQLQTRVAVLEQEIKDKDQLVLRTKEVLEATQQQKNSVEGNAESKQLQISKLESTVKSLSEELIKANGIIKKLQADLKALLGKIKVKNSVTVPQEKILQETSDKLQRQQ--------------RELQDTQQRLSLKEEEAAKLKEQLEATVQKLDESRE",
+                  "midline": "++LQ  + EL+  ++EL D        +   + +L S EE+    +Q+VL+L    S L+ E H++  ++  L  +V  LE      +Q+  +T   L+ TQ Q   +   A    L    LE+  ++LS  L++ +  + +LQA  +AL   IK+K+   +     + + S K +  +              +E QD +Q+L   + E  KLKE L     + +E RE"
+                }
+              ]
+            },
+            {
+              "num": 4,
+              "description": [
+                {
+                  "id": "sp|P46864|",
+                  "accession": "P46864",
+                  "title": ""
+                }
+              ],
+              "len": 745,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 39.2762,
+                  "score": 90,
+                  "evalue": 0.0218209,
+                  "identity": 37,
+                  "positive": 70,
+                  "query_from": 95,
+                  "query_to": 232,
+                  "hit_from": 156,
+                  "hit_to": 286,
+                  "align_len": 138,
+                  "gaps": 7,
+                  "qseq": "ALESNQMECQTALQKTQLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTE",
+                  "hseq": "AVESLQAAITEELAKTQGELQTANQRIQAVNDMYKLLQEYNSSLQLYNSKLQGDLDE--AHEN-----IKRGEKERTGIVESIGNLKGQFKALQDQLAASKVSQDDVMKQKDELVNEIVSLKVEIQQVKDDRDRHITE",
+                  "midline": "A+ES Q      L KTQ +LQ   Q+    + + + L+  N +L     +L   + +  A E      IK  +K+    V  I +  G+FK L+  L  +K+++  ++K+K +   ++ +LK+E+ ++K+D +   TE"
+                }
+              ]
+            },
+            {
+              "num": 5,
+              "description": [
+                {
+                  "id": "sp|Q69YQ0|",
+                  "accession": "Q69YQ0",
+                  "title": ""
+                }
+              ],
+              "len": 1117,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 37.3502,
+                  "score": 85,
+                  "evalue": 0.102422,
+                  "identity": 53,
+                  "positive": 103,
+                  "query_from": 151,
+                  "query_to": 346,
+                  "hit_from": 508,
+                  "hit_to": 731,
+                  "align_len": 224,
+                  "gaps": 28,
+                  "qseq": "QLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDL-NEK-------TTENNEQREEI------IRLKQEK-----SCLHDELLFTVEREKR-KDELLNI---AKSKQERTNSELHNLRQIYVKQQSDLQFLNFNVENSQELIQMYDSKMEESKALDSSRDMCLSDLENNHPKV-----DIKRE",
+                  "hseq": "QLLGVQQHLSNTLKMAEQDNKEAQEMIGALKERSHHMERIIESEQKGKAALAATLEEYKATVASDQIEMNRLKAQLENEKQKVAELYSIHNSGDKSDIQDLLESVRLDKEKAETLASSLQEDLAHTRNDANRLQDAIAKVEDEYRAFQEEAKKQIEDLNMTLEKLRSDLDEKETERSDMKETIFELEDEVEQHRAVKLHDNLIISDLENTVKKLQDQKHDMERE",
+                  "midline": "QL   +Q L+  +K+ ++D  EA   I     +   +E  +   +  +  +    ++YK  + + +IE+N+LK  L NEK       +  N+  + +I      +RL +EK     S L ++L  T     R +D +  +    ++ QE    ++ +L     K +SDL        + +E I   + ++E+ +A+    ++ +SDLEN   K+     D++RE"
+                }
+              ]
+            },
+            {
+              "num": 6,
+              "description": [
+                {
+                  "id": "sp|Q6QLM7|",
+                  "accession": "Q6QLM7",
+                  "title": ""
+                }
+              ],
+              "len": 1027,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 36.965,
+                  "score": 84,
+                  "evalue": 0.11701,
+                  "identity": 55,
+                  "positive": 96,
+                  "query_from": 86,
+                  "query_to": 291,
+                  "hit_from": 598,
+                  "hit_to": 803,
+                  "align_len": 222,
+                  "gaps": 32,
+                  "qseq": "IRSLTKKVKALESNQMECQTALQKT-------QLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHA---------LRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSELHNLRQIYVK",
+                  "hseq": "VKSVVKRCRQLENLQVECHRKMEVTGRELSSCQLLISQHEAKIRSLTEYMQTVELKKRHLEESYDSLSDELAKLQAQETVHEVALKDKEPDTQDAEE--VKKALELQMENHREAHHRQLARLRDEINEKQKTIDELKDLDQKLQ---LELEKLQADYERLKNEENE-----------KSAKLQELTFLYERHEQSKQDLKGLEETVARELQTLHNLRKLFVQ",
+                  "midline": "++S+ K+ + LE+ Q+EC   ++ T       QL + +   K    +   + +E +   L  +   LS ++ +LQA+E      +K K+ D  +A       + + +M  H          LRD    +   + E +D  QKL+   +E+ KL+ D      E NE           KS    EL F  ER ++  + L   +    R    LHNLR+++V+"
+                }
+              ]
+            },
+            {
+              "num": 7,
+              "description": [
+                {
+                  "id": "sp|P33175|",
+                  "accession": "P33175",
+                  "title": ""
+                }
+              ],
+              "len": 1027,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 36.965,
+                  "score": 84,
+                  "evalue": 0.124196,
+                  "identity": 55,
+                  "positive": 95,
+                  "query_from": 86,
+                  "query_to": 291,
+                  "hit_from": 598,
+                  "hit_to": 803,
+                  "align_len": 222,
+                  "gaps": 32,
+                  "qseq": "IRSLTKKVKALESNQMECQTALQKT-------QLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHA---------LRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSELHNLRQIYVK",
+                  "hseq": "VKSVVKRCRQLENLQVECHRKMEVTGRELSSCQLLISQHEAKIRSLTEYMQTVELKKRHLEESYDSLSDELARLQAHETVHEVALKDKEPDTQDAEE--VKKALELQMENHREAHHRQLARLRDEINEKQKTIDELKDLNQKLQ---LELEKLQADYERLKNEENE-----------KSAKLQELTFLYERHEQSKQDLKGLEETVARELQTLHNLRKLFVQ",
+                  "midline": "++S+ K+ + LE+ Q+EC   ++ T       QL + +   K    +   + +E +   L  +   LS ++ +LQA E      +K K+ D  +A       + + +M  H          LRD    +   + E +D  QKL+   +E+ KL+ D      E NE           KS    EL F  ER ++  + L   +    R    LHNLR+++V+"
+                }
+              ]
+            },
+            {
+              "num": 8,
+              "description": [
+                {
+                  "id": "sp|Q2KN98|",
+                  "accession": "Q2KN98",
+                  "title": ""
+                }
+              ],
+              "len": 1118,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 36.965,
+                  "score": 84,
+                  "evalue": 0.148948,
+                  "identity": 52,
+                  "positive": 105,
+                  "query_from": 151,
+                  "query_to": 346,
+                  "hit_from": 509,
+                  "hit_to": 732,
+                  "align_len": 224,
+                  "gaps": 28,
+                  "qseq": "QLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDL-NEK-------TTENNEQREEI------IRLKQEK-----SCLHDELLFTVEREKR-KDELLNI---AKSKQERTNSELHNLRQIYVKQQSDLQFLNFNVENSQELIQMYDSKMEESKALDSSRDMCLSDLENNHPKV-----DIKRE",
+                  "hseq": "QLLGVQQHLSNTLKMAEQDNKEAQEMIGALKERSHHMERIIESEQKGKAALAATLEEYKATVASDQIEMNRLKAQLENEKQKVAELYSIHNSGDKSDIQDLLESVRLDKEKAETLASSLQEDLAHTRNDANRLQDTIAKVEDEYRAFQEEAKKQIEDLNMTLEKLRSELEEKDTERSDMKETIFELEDEVEQHRAVKLHDNLIISDLENTVKKLQDQKHDMERE",
+                  "midline": "QL   +Q L+  +K+ ++D  EA   I     +   +E  +   +  +  +    ++YK  + + +IE+N+LK  L NEK       +  N+  + +I      +RL +EK     S L ++L  T     R +D +  +    ++ QE    ++ +L     K +S+L+  +    + +E I   + ++E+ +A+    ++ +SDLEN   K+     D++RE"
+                }
+              ]
+            },
+            {
+              "num": 9,
+              "description": [
+                {
+                  "id": "sp|P10587|",
+                  "accession": "P10587",
+                  "title": ""
+                }
+              ],
+              "len": 1979,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 36.965,
+                  "score": 84,
+                  "evalue": 0.155951,
+                  "identity": 68,
+                  "positive": 109,
+                  "query_from": 68,
+                  "query_to": 284,
+                  "hit_from": 1010,
+                  "hit_to": 1244,
+                  "align_len": 252,
+                  "gaps": 52,
+                  "qseq": "LEERCSKLEGELHKRTEIIRSLTKKVKALESNQMECQTALQKTQLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAR-----EQALTTMIKLKD---------KDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKI---------------------EVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSELHN",
+                  "hseq": "LEERVSDLTTNLAEEEEKAKNLTKLKNKHESMISELEVRLKKEEKSRQELEK-------IKRKLEGESSDLHEQIAELQAQIAELKAQLAKKEEELQAALARLEDETSQKNNALKKIRELESHISD-------LQEDLESEKAARNKAEKQKRDLSEELEALKTELEDTLDTTATQQELRAKREQEVTVLKRALEEETRTHEAQVQE---MRQKHTQAVEELTEQLEQFKRAKANLDKTKQTLEKDNADLAN",
+                  "midline": "LEER S L   L +  E  ++LTK     ES   E +  L+K +   QE+ +       +   LE  +  L   + EL AQ+ +L+A+     E+    + +L+D         K I E  +HI+D       L+  L   K A     K+K+D  ++L+ALK                      EV  LK  L E+T  +  Q +E   ++Q+ +   +EL   +E+ KR    L+  K   E+ N++L N"
+                }
+              ]
+            },
+            {
+              "num": 10,
+              "description": [
+                {
+                  "id": "sp|Q12840|",
+                  "accession": "Q12840",
+                  "title": ""
+                }
+              ],
+              "len": 1032,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 35.8094,
+                  "score": 81,
+                  "evalue": 0.29365,
+                  "identity": 54,
+                  "positive": 98,
+                  "query_from": 86,
+                  "query_to": 291,
+                  "hit_from": 598,
+                  "hit_to": 803,
+                  "align_len": 222,
+                  "gaps": 32,
+                  "qseq": "IRSLTKKVKALESNQMECQTALQKT-------QLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHA---------LRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSELHNLRQIYVK",
+                  "hseq": "VKSVVKRCRQLENLQVECHRKMEVTGRELSSCQLLISQHEAKIRSLTEYMQSVELKKRHLEESYDSLSDELAKLQAQETVHEVALKDKEPDTQDADE--VKKALELQMESHREAHHRQLARLRDEINEKQKTIDELKDLNQKLQ---LELEKLQADYEKLKSE-----------EHEKSTKLQELTFLYERHEQSKQDLKGLEETVARELQTLHNLRKLFVQ",
+                  "midline": "++S+ K+ + LE+ Q+EC   ++ T       QL + +   K    +   + +E +   L  +   LS ++ +LQA+E      +K K+ D  +A       + + +M  H          LRD    +   + E +D  QKL+   +E+ KL+ D  +  +E           + EKS    EL F  ER ++  + L   +    R    LHNLR+++V+"
+                }
+              ]
+            },
+            {
+              "num": 11,
+              "description": [
+                {
+                  "id": "sp|Q14204|",
+                  "accession": "Q14204",
+                  "title": ""
+                }
+              ],
+              "len": 4646,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 34.6538,
+                  "score": 78,
+                  "evalue": 0.712856,
+                  "identity": 57,
+                  "positive": 124,
+                  "query_from": 20,
+                  "query_to": 253,
+                  "hit_from": 3212,
+                  "hit_to": 3457,
+                  "align_len": 256,
+                  "gaps": 32,
+                  "qseq": "ISTIEKQRKELQLLIGELKDRDKELNDMV--AVHQQQLLSWEEDRQKVLTLEERCSKLEGELHKRTEII----RSLTKKVKALESNQMECQTALQKTQLQ-LQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAV------NHIADCSGKFKMLEHA-LRDAKMAETCIVK-EKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQRE-------EIIRLKQEKSCLHDE",
+                  "hseq": "VDQVEELRRDLRIKSQELEVKNAAANDKLKKMVKDQQ----EAEKKKVMSQE-----IQEQLHKQQEVIADKQMSVKEDLDKVEPAVIEAQNAVKSIKKQHLVEVRSMANPPAAVKLALESICLLLGESTTDWK-QIRSIIMRENFIPTIVNFSAEEISDAIREKMKKNYMSNPSYNYEIVNRASLACGPMVKWAIAQLNYADMLKRVEPLRNELQKLEDDAKDNQQKANEVEQMIRDLEASIARYKEEYAVLISE",
+                  "midline": "+  +E+ R++L++   EL+ ++   ND +   V  QQ    E +++KV++ E     ++ +LHK+ E+I     S+ + +  +E   +E Q A++  + Q L E+   A   + +   LE+    L  +  +   Q+  +  RE  + T++    ++I +A+      N++++ S  ++++  A L    M +  I +    D  ++++ L+ E+ KL++D  +   + NE  +        I R K+E + L  E"
+                }
+              ]
+            },
+            {
+              "num": 12,
+              "description": [
+                {
+                  "id": "sp|O08638|",
+                  "accession": "O08638",
+                  "title": ""
+                }
+              ],
+              "len": 1972,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 34.6538,
+                  "score": 78,
+                  "evalue": 0.755008,
+                  "identity": 63,
+                  "positive": 106,
+                  "query_from": 68,
+                  "query_to": 282,
+                  "hit_from": 1004,
+                  "hit_to": 1236,
+                  "align_len": 243,
+                  "gaps": 38,
+                  "qseq": "LEERCSKLEGELHKRTEIIRSLTKKVKALESNQMECQTALQKTQLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVG----QLQAREQALTTMIKLKDKDIIE---AVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKI---------------------EVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSEL",
+                  "hseq": "LEERVSDLTTNLAEEEEKAKNLTKLKSKHESMISELEVRLKKEEKSRQELEK-------LKRKLEGDASDFHEQIADLQAQIAELKMQLAKKEEELQAALARLDEEIAQKNNALKKIRELEGHISDLQEDLDSERAARNKAEKQKRDLGEELEALKTELEDTLDSTATQQELRAKREQEVTVLKKALDEETRSHEAQVQE---MRQKHTQAVEELTEQLEQFKRAKANLDKSKQTLEKENADL",
+                  "midline": "LEER S L   L +  E  ++LTK     ES   E +  L+K +   QE+ +       L   LE         + +L AQ+     QL  +E+ L   +   D++I +   A+  I +  G    L+  L   + A     K+K+D  ++L+ALK                      EV  LK+ L+E+T  +  Q +E   ++Q+ +   +EL   +E+ KR    L+ +K   E+ N++L"
+                }
+              ]
+            },
+            {
+              "num": 13,
+              "description": [
+                {
+                  "id": "sp|Q9JHU4|",
+                  "accession": "Q9JHU4",
+                  "title": ""
+                }
+              ],
+              "len": 4644,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 34.6538,
+                  "score": 78,
+                  "evalue": 0.769257,
+                  "identity": 57,
+                  "positive": 124,
+                  "query_from": 20,
+                  "query_to": 253,
+                  "hit_from": 3210,
+                  "hit_to": 3455,
+                  "align_len": 256,
+                  "gaps": 32,
+                  "qseq": "ISTIEKQRKELQLLIGELKDRDKELNDMV--AVHQQQLLSWEEDRQKVLTLEERCSKLEGELHKRTEII----RSLTKKVKALESNQMECQTALQKTQLQ-LQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAV------NHIADCSGKFKMLEHA-LRDAKMAETCIVK-EKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQRE-------EIIRLKQEKSCLHDE",
+                  "hseq": "VDQVEELRRDLRIKSQELEVKNAAANDKLKKMVKDQQ----EAEKKKVMSQE-----IQEQLHKQQEVIADKQMSVKEDLDKVEPAVIEAQNAVKSIKKQHLVEVRSMANPPAAVKLALESICLLLGESTTDWK-QIRSIIMRENFIPTIVNFSAEEISDAIREKMKKNYMSNPSYNYEIVNRASLACGPMVKWAIAQLNYADMLKRVEPLRNELQKLEDDAKDNQQKANEVEQMIRDLEASIARYKEEYAVLISE",
+                  "midline": "+  +E+ R++L++   EL+ ++   ND +   V  QQ    E +++KV++ E     ++ +LHK+ E+I     S+ + +  +E   +E Q A++  + Q L E+   A   + +   LE+    L  +  +   Q+  +  RE  + T++    ++I +A+      N++++ S  ++++  A L    M +  I +    D  ++++ L+ E+ KL++D  +   + NE  +        I R K+E + L  E"
+                }
+              ]
+            },
+            {
+              "num": 14,
+              "description": [
+                {
+                  "id": "sp|P46875|",
+                  "accession": "P46875",
+                  "title": ""
+                }
+              ],
+              "len": 754,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 33.8834,
+                  "score": 76,
+                  "evalue": 1.14155,
+                  "identity": 17,
+                  "positive": 38,
+                  "query_from": 163,
+                  "query_to": 225,
+                  "hit_from": 226,
+                  "hit_to": 288,
+                  "align_len": 63,
+                  "gaps": 0,
+                  "qseq": "IKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKED",
+                  "hseq": "IKRGEKERTAIIENIGNLKGQFSALQEQLAASKASQEDIMKQKGELVNEIASLKVELQQVKDD",
+                  "midline": "IK  +K+    + +I +  G+F  L+  L  +K ++  I+K+K +   ++ +LK+E+ ++K+D"
+                }
+              ]
+            },
+            {
+              "num": 15,
+              "description": [
+                {
+                  "id": "sp|P38650|",
+                  "accession": "P38650",
+                  "title": ""
+                }
+              ],
+              "len": 4644,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 33.8834,
+                  "score": 76,
+                  "evalue": 1.25663,
+                  "identity": 57,
+                  "positive": 123,
+                  "query_from": 20,
+                  "query_to": 253,
+                  "hit_from": 3210,
+                  "hit_to": 3455,
+                  "align_len": 256,
+                  "gaps": 32,
+                  "qseq": "ISTIEKQRKELQLLIGELKDRDKELNDMV--AVHQQQLLSWEEDRQKVLTLEERCSKLEGELHKRTEII----RSLTKKVKALESNQMECQTALQKTQLQ-LQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAV------NHIADCSGKFKMLEHA-LRDAKMAETCIVK-EKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQRE-------EIIRLKQEKSCLHDE",
+                  "hseq": "VDQVEELRRALRIKSQELEVKNAAANDKLKKMVKDQQ----EAEKKKVMSQE-----IQEQLHKQQEVIADKQMSVKEDLDKVEPAVIEAQNAVKSIKKQHLVEVRSMANPPAAVKLALESICLLLGESTTDWK-QIRSIIMRENFIPTIVNFSAEEISDAIREKMKKNYMSNPSYNYEIVNRASLACGPMVKWAIAQLNYADMLKRVEPLRNELQKLEDDAKDNQQKANEVEQMIRDLEASIARYKEEYAVLISE",
+                  "midline": "+  +E+ R+ L++   EL+ ++   ND +   V  QQ    E +++KV++ E     ++ +LHK+ E+I     S+ + +  +E   +E Q A++  + Q L E+   A   + +   LE+    L  +  +   Q+  +  RE  + T++    ++I +A+      N++++ S  ++++  A L    M +  I +    D  ++++ L+ E+ KL++D  +   + NE  +        I R K+E + L  E"
+                }
+              ]
+            },
+            {
+              "num": 16,
+              "description": [
+                {
+                  "id": "sp|Q9P107|",
+                  "accession": "Q9P107",
+                  "title": ""
+                }
+              ],
+              "len": 970,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 33.8834,
+                  "score": 76,
+                  "evalue": 1.28108,
+                  "identity": 15,
+                  "positive": 30,
+                  "query_from": 186,
+                  "query_to": 241,
+                  "hit_from": 155,
+                  "hit_to": 210,
+                  "align_len": 56,
+                  "gaps": 0,
+                  "qseq": "MLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQREEII",
+                  "hseq": "FLEHDLSLGTLAMETVAQQKRDYYQPLAAKRTEIEKWRKEFKEQWMKEQKRMNEAV",
+                  "midline": " LEH L    +A   + ++K+DY Q L A + E+ K +++  E+  +  ++  E +"
+                }
+              ]
+            },
+            {
+              "num": 17,
+              "description": [
+                {
+                  "id": "sp|Q9JHX0|",
+                  "accession": "Q9JHX0",
+                  "title": ""
+                }
+              ],
+              "len": 211,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 32.7278,
+                  "score": 73,
+                  "evalue": 1.45241,
+                  "identity": 23,
+                  "positive": 33,
+                  "query_from": 336,
+                  "query_to": 409,
+                  "hit_from": 21,
+                  "hit_to": 94,
+                  "align_len": 74,
+                  "gaps": 0,
+                  "qseq": "NNHPKVDIKREKNQKSLFKDQKFEAMLVQQNRSDKSSCDECKEKKQQIDTVFGEKSVITLSSIFTKDLVEKHNL",
+                  "hseq": "GNGPKVEEKREKMKRTLLKDWKTRLSYFLQNSSTPGKPKTGKKSKQQTFIKPSPEEALLWAEAFDELLASKYGL",
+                  "midline": " N PKV+ KREK +++L KD K       QN S        K+ KQQ       +  +  +  F + L  K+ L"
+                }
+              ]
+            },
+            {
+              "num": 18,
+              "description": [
+                {
+                  "id": "sp|P35749|",
+                  "accession": "P35749",
+                  "title": ""
+                }
+              ],
+              "len": 1972,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 33.4982,
+                  "score": 75,
+                  "evalue": 1.4628,
+                  "identity": 44,
+                  "positive": 70,
+                  "query_from": 68,
+                  "query_to": 219,
+                  "hit_from": 1004,
+                  "hit_to": 1155,
+                  "align_len": 159,
+                  "gaps": 14,
+                  "qseq": "LEERCSKLEGELHKRTEIIRSLTKKVKALESNQMECQTALQKTQLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVG----QLQAREQALTTMIKLKDKDIIE---AVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEV",
+                  "hseq": "LEERISDLTTNLAEEEEKAKNLTKLKNKHESMISELEVRLKKEEKSRQELEK-------LKRKLEGDASDFHEQIADLQAQIAELKMQLAKKEEELQAALARLDDEIAQKNNALKKIRELEGHISDLQEDLDSERAARNKAEKQKRDLGEELEALKTEL",
+                  "midline": "LEER S L   L +  E  ++LTK     ES   E +  L+K +   QE+ +       L   LE         + +L AQ+     QL  +E+ L   +   D +I +   A+  I +  G    L+  L   + A     K+K+D  ++L+ALK E+"
+                }
+              ]
+            },
+            {
+              "num": 19,
+              "description": [
+                {
+                  "id": "sp|Q07457|",
+                  "accession": "Q07457",
+                  "title": ""
+                }
+              ],
+              "len": 700,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 33.4982,
+                  "score": 75,
+                  "evalue": 1.49271,
+                  "identity": 43,
+                  "positive": 67,
+                  "query_from": 7,
+                  "query_to": 143,
+                  "hit_from": 488,
+                  "hit_to": 621,
+                  "align_len": 153,
+                  "gaps": 35,
+                  "qseq": "FLAGRQNIGSEVEISTIEKQRKELQLLIGELKDRDKELNDMVA-VHQQQLLSWEEDRQ----------KVLTLEERCSKLEGELHKRTEIIRSLTKKVKALESNQ-----MECQTALQKTQLQLQEMAQKATHSSLLSEDLEARNETLSNTLV",
+                  "hseq": "FAAMRSKDSILIEIKTLSKSLSKSNELILQLKDSDRLLQQKIGNLHKQLDLSQNNERRLIDSSKTETLKIIDLNNTSTKLKRSLEKLQE------------ESNKSIADMTHLETKLNDTEIELKHFKQKASH-------LESKCEKLHDTLF",
+                  "midline": "F A R      +EI T+ K   +   LI +LKD D+ L   +  +H+Q  LS   +R+          K++ L    +KL+  L K  E            ESN+        +T L  T+++L+   QKA+H       LE++ E L +TL "
+                }
+              ]
+            },
+            {
+              "num": 20,
+              "description": [
+                {
+                  "id": "sp|Q06277|",
+                  "accession": "Q06277",
+                  "title": ""
+                }
+              ],
+              "len": 4095,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 32.3426,
+                  "score": 72,
+                  "evalue": 3.89224,
+                  "identity": 25,
+                  "positive": 33,
+                  "query_from": 211,
+                  "query_to": 273,
+                  "hit_from": 1579,
+                  "hit_to": 1643,
+                  "align_len": 66,
+                  "gaps": 4,
+                  "qseq": "KLKALKIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLH-DELLFTV--EREKRKDELLNIAKS",
+                  "hseq": "KIKA-KVVTGVVQGDYNTKAGRNAQQTERYIRLDQEYSSGHISGAGFTVSHERDSQNGEKTNIGGA",
+                  "midline": "K+KA K+    ++ D N K   N +Q E  IRL QE S  H     FTV  ER+ +  E  NI  +"
+                }
+              ]
+            },
+            {
+              "num": 21,
+              "description": [
+                {
+                  "id": "sp|Q96CN9|",
+                  "accession": "Q96CN9",
+                  "title": ""
+                }
+              ],
+              "len": 775,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 31.9574,
+                  "score": 71,
+                  "evalue": 4.45428,
+                  "identity": 15,
+                  "positive": 24,
+                  "query_from": 2,
+                  "query_to": 40,
+                  "hit_from": 649,
+                  "hit_to": 687,
+                  "align_len": 39,
+                  "gaps": 0,
+                  "qseq": "NPPAAFLAGRQNIGSEVEISTIEKQRKELQLLIGELKDR",
+                  "hseq": "NEPTFFLYAEQLARKEVEITSLRKQKHRLEVEVHQLQDR",
+                  "midline": "N P  FL   Q    EVEI+++ KQ+  L++ + +L+DR"
+                }
+              ]
+            },
+            {
+              "num": 22,
+              "description": [
+                {
+                  "id": "sp|Q16787|",
+                  "accession": "Q16787",
+                  "title": ""
+                }
+              ],
+              "len": 3333,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 31.9574,
+                  "score": 71,
+                  "evalue": 4.94488,
+                  "identity": 87,
+                  "positive": 176,
+                  "query_from": 24,
+                  "query_to": 420,
+                  "hit_from": 1993,
+                  "hit_to": 2400,
+                  "align_len": 450,
+                  "gaps": 95,
+                  "qseq": "EKQRKELQLLIGELKDRDK----ELNDMVAVHQQQLLSWEED----RQKVLTLEERCSKLEGELHKRTEIIRSLTKKVKALESNQME-------CQTALQKTQLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAE--TCIVKEKQDYKQKLKALKIEVNK---------------LKEDLNEKTTENNEQREEII--------RLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSELHNLRQ-IYVKQQSDLQFLNFNVENSQELIQMYDSKMEESKALDSSRDMCLSDLENNHPKVDIKREKNQKSLFKDQKFEAMLVQQNRSDKSSCDECKEKKQQIDTVFGEKSVITLSSIF------------TKDLVEKHNLPWSLGGKTQIE",
+                  "hseq": "EADKRESQLLLNRIRTWQKTHQGENNGLANSIRDSLNEYEAKLSDLRARLQEAAAQAKQANGLNQENERALGAIQRQVKEINSLQSDFTKYLTTADSSLLQTNIALQLMEKSQKEYEKLAASLNEARQELSDKVRELSRSAGK--------TSLVE-------EAEKHARSLQELAKQLEEIKRNASGDELVRCAVDAATAYENILNAIKAAEDAANRAASASESALQTVIKEDLPRKAKTLSSNSDKLLNEAKMTQKKLKQEVSPALNNL----------QQTLNIVTVQKEVIDTNLTTLRDGLHGIQRGDIDAM---ISSAKSMVR---------KANDIT-DEVLDGL--NPIQTDVERIKDTYGRTQNEDFKKALTDADNSVNKLTNKLPDLWRKIESI--NQQLLPLGNISDNMDRIRELIQQARDAASKVAVPMRFNGKSGVE",
+                  "midline": "E  ++E QLL+  ++   K    E N +    +  L  +E      R ++     +  +  G   +    + ++ ++VK + S Q +         ++L +T + LQ M +       L+  L    + LS+ + ELS   G+        T++++       EA  H        K LE   R+A   E   C V     Y+  L A+K   +                +KEDL  K    +   ++++        +LKQE S   + L           + LNI   ++E  ++ L  LR  ++  Q+ D+  +   + +++ +++         KA D + D  L  L  N  + D++R K+     +++ F+  L   + S     ++  +  ++I+++   + ++ L +I              +D   K  +P    GK+ +E"
+                }
+              ]
+            },
+            {
+              "num": 23,
+              "description": [
+                {
+                  "id": "sp|Q9LIQ9|",
+                  "accession": "Q9LIQ9",
+                  "title": ""
+                }
+              ],
+              "len": 714,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 31.5722,
+                  "score": 70,
+                  "evalue": 5.30333,
+                  "identity": 36,
+                  "positive": 58,
+                  "query_from": 23,
+                  "query_to": 122,
+                  "hit_from": 415,
+                  "hit_to": 524,
+                  "align_len": 112,
+                  "gaps": 14,
+                  "qseq": "IEKQRKELQLLIGELKDRDKELNDM-----VAVHQQQLLSWE----EDRQKVLTLEERCSKLEGELHKRTEIIRSLTKKVKALESNQMECQT---ALQKTQLQLQEMAQKAT",
+                  "hseq": "MERLYQQIQAQMGELESVRVEYANAQLECNAADERSQILASEVISLED--KALRLRSNELKLERELEKAQTEMLSYKKKLQSLEKDRQDLQSTIKALQEEKKVLQTMVQKAS",
+                  "midline": "+E+  +++Q  +GEL+    E  +       A  + Q+L+ E    ED  K L L     KLE EL K    + S  KK+++LE ++ + Q+   ALQ+ +  LQ M QKA+"
+                }
+              ]
+            },
+            {
+              "num": 24,
+              "description": [
+                {
+                  "id": "sp|Q8ND30|",
+                  "accession": "Q8ND30",
+                  "title": ""
+                }
+              ],
+              "len": 876,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 31.5722,
+                  "score": 70,
+                  "evalue": 6.10965,
+                  "identity": 56,
+                  "positive": 96,
+                  "query_from": 67,
+                  "query_to": 291,
+                  "hit_from": 106,
+                  "hit_to": 312,
+                  "align_len": 225,
+                  "gaps": 18,
+                  "qseq": "TLEERCSKLEGELHKRTEIIRSLTKKVKALESNQMECQTALQKTQLQLQEMAQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSELHNLRQIYVK",
+                  "hseq": "TYQERLARLEGDKESLILQVSVLTDQVEAQGEKIRDLEVCLEGHQVKLNAAEE------MLQQELLSRT-SLETQKLDLMTEVSEL-----------KLKLVGMEKEQREQEEKQRKAEELLQELRHLKIKVEELENERNQYEWKLKATKAEVAQLQEQVALKDAEIERLHSQLSRTAALHSESHTERDQEIQRLKMGMETLLLANEDKDRRIEELTGLLNQYRK",
+                  "midline": "T +ER ++LEG+       +  LT +V+A      + +  L+  Q++L    +      +L ++L +R  +L    ++L  +V +L           KLK   + +      +   K + L   LR  K+    +  E+  Y+ KLKA K EV +L+E +  K  E      ++ R     S  H E    ++R K   E L +A   ++R   EL  L   Y K"
+                }
+              ]
+            },
+            {
+              "num": 25,
+              "description": [
+                {
+                  "id": "sp|Q5T7N3|",
+                  "accession": "Q5T7N3",
+                  "title": ""
+                }
+              ],
+              "len": 995,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 31.5722,
+                  "score": 70,
+                  "evalue": 6.36696,
+                  "identity": 19,
+                  "positive": 35,
+                  "query_from": 16,
+                  "query_to": 81,
+                  "hit_from": 335,
+                  "hit_to": 400,
+                  "align_len": 66,
+                  "gaps": 0,
+                  "qseq": "SEVEISTIEKQRKELQLLIGELKDRDKELNDMVAVHQQQLLSWEEDRQKVLTLEERCSKLEGELHK",
+                  "hseq": "ARVDPGSISSLKQQVSALEGELSGRTEELAQVRTALQQQEEEIKAREQRIRELEFTVAQLEGQFHQ",
+                  "midline": "+ V+  +I   ++++  L GEL  R +EL  +    QQQ    +   Q++  LE   ++LEG+ H+"
+                }
+              ]
+            },
+            {
+              "num": 26,
+              "description": [
+                {
+                  "id": "sp|P87061|",
+                  "accession": "P87061",
+                  "title": ""
+                }
+              ],
+              "len": 1147,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 31.5722,
+                  "score": 70,
+                  "evalue": 6.46367,
+                  "identity": 77,
+                  "positive": 132,
+                  "query_from": 28,
+                  "query_to": 312,
+                  "hit_from": 687,
+                  "hit_to": 946,
+                  "align_len": 299,
+                  "gaps": 53,
+                  "qseq": "KELQLLIGELKDRDKELNDMVAVHQQQLLSWEEDRQKVLTLEERCSKLEGELHKRTEIIRSLTKKVKALESN---QMECQT------ALQKTQLQLQEMAQKATHSSLLSEDLEAR---NETLSNTLVELSAQVGQLQAREQALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSELHNLRQIYVKQQSDLQFLNFNV--ENSQELIQM",
+                  "hseq": "KALEVMRETSSDLDKQLKDATA-SQKELIVQTSSFQKEL-VEER--ERHNAISKRLQEIESLYRDRELLVTNLEDQLVDQTVTINKFAFERDQFRERSMGFENTIKDL-TRKMEATDMLNVSLHESLRSVQTENSEL-VTEMALLKAELVKKQAIIDANANIYD---------KLTADHTNYETVSADINQNLKETLDKL----------LNGSSDFKNNEIE----------LLHDQIRITNAKLEKREKLINASKYIEDTLRSEI----QEAAEKVSNLEFSNFNLKEENSNMQLQL",
+                  "midline": "K L+++     D DK+L D  A  Q++L+      QK L +EER  +    + KR + I SL +  + L +N   Q+  QT      A ++ Q + + M  + T   L +  +EA    N +L  +L  +  +  +L   E AL     +K + II+A  +I D             D    ET      Q+ K+ L  L          LN  +   N + E           LHD++  T  + +++++L+N +K  ++   SE+    Q   ++ S+L+F NFN+  ENS   +Q+"
+                }
+              ]
+            },
+            {
+              "num": 27,
+              "description": [
+                {
+                  "id": "sp|O08849|",
+                  "accession": "O08849",
+                  "title": ""
+                }
+              ],
+              "len": 211,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 30.4166,
+                  "score": 67,
+                  "evalue": 7.16107,
+                  "identity": 19,
+                  "positive": 24,
+                  "query_from": 336,
+                  "query_to": 382,
+                  "hit_from": 21,
+                  "hit_to": 67,
+                  "align_len": 47,
+                  "gaps": 0,
+                  "qseq": "NNHPKVDIKREKNQKSLFKDQKFEAMLVQQNRSDKSSCDECKEKKQQ",
+                  "hseq": "GNGPKVEEKREKMKRTLLKDWKTRLSYFLQNSSAPGKPKTGKKSKQQ",
+                  "midline": " N PKV+ KREK +++L KD K       QN S        K+ KQQ"
+                }
+              ]
+            },
+            {
+              "num": 28,
+              "description": [
+                {
+                  "id": "sp|Q9VJE5|",
+                  "accession": "Q9VJE5",
+                  "title": ""
+                }
+              ],
+              "len": 1690,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 31.187,
+                  "score": 69,
+                  "evalue": 7.57167,
+                  "identity": 62,
+                  "positive": 107,
+                  "query_from": 74,
+                  "query_to": 263,
+                  "hit_from": 1043,
+                  "hit_to": 1291,
+                  "align_len": 249,
+                  "gaps": 59,
+                  "qseq": "KLEGELHKRT--EIIRSLTKKVKALESNQMECQTALQKTQLQLQEM------------------AQKATHSSLLSEDLEARNETLSNTLVELSAQVGQLQAREQALTTMIKLKDKD-------IIEAVNHIA-----------DCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLK----------EDLNEKTTE--------NNEQREEIIRLKQEKSCL---HDELLFTVEREKR",
+                  "hseq": "KAEGERKEKSFEESIKNLQEEVTKAKTENLELSTGTQTTIKDLQERLEITNAELQHKEKMASEDAQKIADLKTLVEAIQVANANISATNAELSTVLEVLQAEKSETNHIFELFEMEADMNSERLIEKVTGIKEELKETHLQLDERQKKFEELEEKLKQAQQSEQKLQQESQTSKEKLTEIQQSLQELQDSVKQKEELVQNLEEKVRESSSIIEAQNTKLNESNVQLENKTSCLKETQDQLLESQKKEKQ",
+                  "midline": "K EGE  +++  E I++L ++V   ++  +E  T  Q T   LQE                   AQK      L E ++  N  +S T  ELS  +  LQA +     + +L + +       +IE V  I            +   KF+ LE  L+ A+ +E  + +E Q  K+KL  ++  + +L+          ++L EK  E        N +  E  ++L+ + SCL    D+LL + ++EK+"
+                }
+              ]
+            },
+            {
+              "num": 29,
+              "description": [
+                {
+                  "id": "sp|Q8IZ41|",
+                  "accession": "Q8IZ41",
+                  "title": ""
+                }
+              ],
+              "len": 740,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 31.187,
+                  "score": 69,
+                  "evalue": 7.63494,
+                  "identity": 39,
+                  "positive": 82,
+                  "query_from": 183,
+                  "query_to": 342,
+                  "hit_from": 212,
+                  "hit_to": 368,
+                  "align_len": 166,
+                  "gaps": 15,
+                  "qseq": "KFKMLEHALR--DAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDELLFTVEREKRKDELLNIAKSKQERTNSELHNLRQIYVKQ----QSDLQFLNFNVENSQELIQMYDSKMEESKALDSSRDMCLSDLENNHPKVD",
+                  "hseq": "RIQAAEHKTRKDEKRKAEEALSDLRRQYETEVGDLQVTIKKLRK--LEEQSKRVSQKEDVAALKKQ---IYD---LSMENQKVKKDLLE-AQTNIAFLQSELDALKSDYADQSLNTERDLEIIRAYTEDRNSLERQIEILQTANRKLHDSNDGLRSALENSYSKFN",
+                  "midline": "+ +  EH  R  + + AE  +   ++ Y+ ++  L++ + KL++   E+ ++   Q+E++  LK++   ++D    ++E +K K +LL  A++      SEL  L+  Y  Q    + DL+ +    E+   L +  +     ++ L  S D   S LEN++ K +"
+                }
+              ]
+            },
+            {
+              "num": 30,
+              "description": [
+                {
+                  "id": "sp|Q09EF7|",
+                  "accession": "Q09EF7",
+                  "title": ""
+                }
+              ],
+              "len": 1955,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 31.187,
+                  "score": 69,
+                  "evalue": 9.12526,
+                  "identity": 39,
+                  "positive": 67,
+                  "query_from": 71,
+                  "query_to": 193,
+                  "hit_from": 1029,
+                  "hit_to": 1158,
+                  "align_len": 132,
+                  "gaps": 11,
+                  "qseq": "RCSKLEGELHKRTEIIRSLTKKVKALESNQMECQTALQKTQLQLQEMAQKATHSSLLSEDLEARN--ETLSNTLVELSAQVGQL--QARE-QALTTMIKLKDKDIIEAVN----HIADCSGKFKMLEHALRD",
+                  "hseq": "RISVLEGDVEKLTAGIAERESSINALESNTMELISKLETTEAELEKL--KDELAVMLKQNSELKNGKEGLSEKWNEERKKIQDLADQLREANKVVHNMRMKNVNLEEKKNELDQNVTDLTNKVRQLEIQLMD",
+                  "midline": "R S LEG++ K T  I      + ALESN ME  + L+ T+ +L+++  K   + +L ++ E +N  E LS    E   ++  L  Q RE   +   +++K+ ++ E  N    ++ D + K + LE  L D"
+                }
+              ]
+            },
+            {
+              "num": 31,
+              "description": [
+                {
+                  "id": "sp|Q96SN8|",
+                  "accession": "Q96SN8",
+                  "title": ""
+                }
+              ],
+              "len": 1893,
+              "hsps": [
+                {
+                  "num": 1,
+                  "bit_score": 30.8018,
+                  "score": 68,
+                  "evalue": 9.58443,
+                  "identity": 29,
+                  "positive": 44,
+                  "query_from": 157,
+                  "query_to": 253,
+                  "hit_from": 321,
+                  "hit_to": 414,
+                  "align_len": 97,
+                  "gaps": 3,
+                  "qseq": "QALTTMIKLKDKDIIEAVNHIADCSGKFKMLEHALRDAKMAETCIVKEKQDYKQKLKALKIEVNKLKEDLNEKTTENNEQREEIIRLKQEKSCLHDE",
+                  "hseq": "QGLTMALKSKEKKVEELNSEIEKLSAAFAKAREALQKAQTQE---FQGSEDYETALSGKEALSAALRSQNLTKSTENHRLRRSIKKITQELSDLQQE",
+                  "midline": "Q LT  +K K+K + E  + I   S  F     AL+ A+  E    +  +DY+  L   +     L+     K+TEN+  R  I ++ QE S L  E"
+                }
+              ]
+            }
+          ],
+          "stat": {
+            "db_num": 69062,
+            "db_len": 36977158,
+            "hsp_len": 114,
+            "eff_space": 16589331300,
+            "kappa": 0.041,
+            "lambda": 0.267,
+            "entropy": 0.14
+          }
+        }
+      }
+    }
+  }
+}
