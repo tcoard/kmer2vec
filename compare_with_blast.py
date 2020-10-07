@@ -23,7 +23,9 @@ def rank_data(their_data, our_data):
             else:
                 concordant += 1
     # our data and their data are the same length
-    kendall_t = (concordant - discordant) / comb(len(their_data), 2)
+    kendall_t = 0
+    if float(comb(len(their_data), 2)) != 0:
+        kendall_t = float(concordant - discordant) / float(comb(len(their_data), 2))
     return our_ranked_data, kendall_t
 
 
