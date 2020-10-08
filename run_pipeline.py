@@ -1,4 +1,4 @@
-import add_id, compare_with_blast, create_kmers, example_w2v, query_model
+import add_id, compare_with_blast, create_kmers, example_w2v, query_model, normalize_seq
 
 # TODO don't have all of the data dump to the root dir
 # TODO make data file names more descriptive
