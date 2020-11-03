@@ -7,7 +7,7 @@ import logging
 import gensim
 from gensim.models import Word2Vec
 from gensim.models.word2vec import LineSentence
-import joblib
+# import joblib
 
 assert gensim.models.word2vec.FAST_VERSION > -1
 
@@ -15,12 +15,14 @@ logging.basicConfig(
     format="%(asctime)s : %(levelname)s : %(message)s", level=logging.INFO
 )
 
-def main():
+def main(run_variables):
+    output_file_name = f"intermediate_data/uniprot_sprot_4_kmers_{run_variables['filename_suffix']}.csv"
+
     n_cores = 4
     seed = 423
     # seed = 564 #original seed
 
-    k = 4
+    k = run_variables["kmer_len"]
     d = 256
     w = 50
     neg_samps = 100
@@ -34,12 +36,10 @@ def main():
     # NOTE this is not called
     # ids_fn = f"{name}_{k}_ids.pkl"
     # NOTE this file is space seperated, not comma
-    kmers_fn = f"{name}_{k}_kmers.csv"
-    model_fn = f"w2v_model_{k}_{d}_{epochs}_{w}_{neg_samps}_{str(samp_freq).replace('0.','')}_{n_min}_model.pkl"
+    # model_fn = f"w2v_model_{k}_{d}_{epochs}_{w}_{neg_samps}_{str(samp_freq).replace('0.','')}_{n_min}_model.pkl"
+    print(run_variables["create_kmers_out"], run_variables["create_model_out"], flush=True)
 
-    print(kmers_fn, model_fn, flush=True)
-
-    kmers_init = LineSentence(kmers_fn, max_sentence_length=100000)
+    kmers_init = LineSentence(run_variables["create_kmers_out"], max_sentence_length=100000)
 
     model = Word2Vec(
         kmers_init,
@@ -54,12 +54,12 @@ def main():
         seed=seed,
     )
 
-    model.save(model_fn)
+    model.save(run_variables["create_model_out"])
 
-    w2v_model = {}
-    for item in model.wv.vocab:
-        w2v_model[item] = model[item]
-    joblib.dump(w2v_model, f"w2v_k{k}.joblib")
+    # w2v_model = {}
+    # for item in model.wv.vocab:
+    #     w2v_model[item] = model[item]
+    # joblib.dump(w2v_model, f"w2v_k{k}.joblib")
 
 
 

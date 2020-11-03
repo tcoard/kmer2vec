@@ -1,21 +1,63 @@
-import add_id, compare_with_blast, create_kmers, example_w2v, query_model, normalize_seq
+from os import path
+from src import (
+    compare_with_blast,
+    create_kmers,
+    create_model,
+    query_model,
+    normalize_seq,
+)
 
-# TODO don't have all of the data dump to the root dir
-# TODO make data file names more descriptive
+run_variables = {"kmer_len": 4, "extra_info": None}
+
+run_var_formatted = [
+    f"{var}-{run_variables[var]}"
+    for var in run_variables
+    if run_variables[var] is not None
+].join("_")
+output_dir = f"data_{run_var_formatted}/"
+os.mkdir(output_dir)
 
 # format data for model
-create_kmers.main()
+run_variables["fasta_file"] = "exp_protein_sequences.fasta"
+run_variables["create_kmers_out"] = f"{output_dir}/kmers_{filename_suffix}.csv"
+if not path.exists(run_variables["create_kmers_out"]):
+    print("Running: create_kmers.py")
+    create_kmers.main(run_variables)
+else:
+    print("Skipping: create_kmers.py")
 
 # create model
-# if .pkl
-example_w2v.main()
+run_variables["create_model_out"] = f"{output_dir}/w2v_model_{filename_suffix}.csv"
+if not path.exists(run_variables["create_model_out"]):
+    print("Running: create_model.py")
+    create_model.main(run_variables)
+else:
+    print("Skipping: create_model.py")
 
 # create a normalized vector for each seq
-normalize_seq.main()
+run_variables["normalize_seq_out"] = f"{output_dir}/normalize_seq.errors"
+run_variables["normalize_seq_vec"] = f"{output_dir}/id_norm_vec.npy"
+if not path.exists(run_variables["normalize_seq_out"]):
+    print("Running: normalize_seq.py")
+    normalize_seq.main(run_variables)
+else:
+    print("Skipping: normalize_seq.py")
 
 # use model to create matches
-query_model.main()
+run_variables["query_model_out"] = f"{output_dir}/matches.json"
+run_variables["query_model_err"] = f"{output_dir}/query_model.errors"
+if not path.exists(run_variables["query_model_out"]):
+    print("Running: query_model.py")
+    query_model.main(run_variables)
+else:
+    print("Skipping: query_model.py")
 
 # compare with blast's results
 # NOTE: blast must be installed locally
-compare_with_blast.main()
+# TODO: Write checks for blast and R and and R packages that we are using
+run_variables["compare_with_blast"] = f"{output_dir}/matches_compared.json"
+if not path.exists(run_variables["compare_with_blast"]):
+    print("Running: compare_with_blast.py")
+    compare_with_blast.main(run_variables)
+else:
+    print("Skipping: compare_with_blast.py")

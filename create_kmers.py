@@ -1,6 +1,8 @@
 """Turns sequences into a list of kmers
 Example: "ACDEFGH" becomes ["ACDEF", "CDEFG", "DEFGH"]
 """
+
+
 def make_kmers(seq, k):
     kmers = []
     for i in range(len(seq) - k + 1):
@@ -8,9 +10,9 @@ def make_kmers(seq, k):
     return kmers
 
 
-def main():
-    with open("exp_protein_sequences.fasta", "r") as in_file, open(
-        "uniprot_sprot_4_kmers.csv", "w"
+def main(run_variables):
+    with open(run_variables["fasta_file"], "r") as in_file, open(
+        run_variables["create_kmers_out"], "w"
     ) as out_file:
         for i, line in enumerate(in_file):
             # skipping ID lines for now. They are readded later.

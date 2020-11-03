@@ -48,28 +48,35 @@ def avg_seq_vector(words, model, num_features):
     return feature_vec
 
 
-def main():
+def main(run_variables):
     """normalize sequences and make a ID -> normalized vector dict"""
-    model = gensim.models.Word2Vec.load("w2v_model_4_256_5_50_100_1e-06_10_model.pkl")
+    model = gensim.models.Word2Vec.load("run_variables['create_model_out']")
     # TODO make a better name for this var
     id_norm_vec = dict()
     # get all of the kmer-ed sequences
-    with open("uniprot_sprot_4_kmers.csv", "r") as kmer_file, open("normalize_seq.errors", "w") as error:
+    with open(run_variables["create_kmers_out"], "r") as kmer_file, open(
+        run_variables["normalize_seq_out"], "w"
+    ) as error:
         for i, kmer_seq in enumerate(kmer_file):
             kmer_seq = kmer_seq.split()
             if not kmer_seq:
                 print(f"No seq on line: {i}", file=error)
                 continue
             try:
-                kmer_2_avg_vector = avg_seq_vector(kmer_seq, model=model, num_features=256)
+                kmer_2_avg_vector = avg_seq_vector(
+                    kmer_seq, model=model, num_features=256
+                )
             # this will get key errors when it encounters kmers that it has not saved
             except KeyError as err:
                 print(err, file=error)
                 continue
             seq = kmers_to_seq(kmer_seq)
-            id_norm_vec[find_id(seq)] = {"vec": kmer_2_avg_vector.reshape(1, -1), "seq": seq}
+            id_norm_vec[find_id(seq)] = {
+                "vec": kmer_2_avg_vector.reshape(1, -1),
+                "seq": seq,
+            }
 
-    np.save("id_norm_vec.npy", id_norm_vec)
+    np.save(run_variables["normalize_seq_vec"], id_norm_vec)
 
 
 if __name__ == "__main__":

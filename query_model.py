@@ -19,7 +19,9 @@ def main():
     id_norm_vec = np.load("id_norm_vec.npy", allow_pickle=True).flat[0]
     random_ids = random.sample(list(id_norm_vec), num_seq_comparing)
 
-    with open("matches.json", "w") as out_file, open("query_model.errors", "w") as error:
+    with open(run_variables["query_model_out"], "w") as out_file, open(
+        run_variables["query_model_err"], "w"
+    ) as error:
         # printing the json structure of this document piecemeal so that if it stops early, we still have partial data
         print("[", file=out_file)
         for i, random_id in enumerate(random_ids):
@@ -40,7 +42,9 @@ def main():
                     scores.append({"score": kmer_similarity, "id": vec_id, "seq": seq})
                     # TODO this is super inefficient, but it should work and developer time > compute time
                     # sort the list and then remove the smallest score
-                    scores = sorted(scores, key=lambda k: k["score"], reverse=True)[0 : num_scores_to_save - 1]
+                    scores = sorted(scores, key=lambda k: k["score"], reverse=True)[
+                        0 : num_scores_to_save - 1
+                    ]
             print(
                 json.dumps(
                     {
