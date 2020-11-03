@@ -1,0 +1,6 @@
+env/
+tags
+*fasta*
+*.npy
+*.pkl
+blast_files/*
