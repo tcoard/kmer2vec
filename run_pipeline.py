@@ -57,6 +57,8 @@ else:
 # NOTE: blast must be installed locally
 # TODO: Write checks for blast and R and and R packages that we are using
 run_variables["compare_with_blast"] = f"{output_dir}matches_compared.json"
+run_variables["plotted_data"] = f"{output_dir}plotted_data.png"
+
 if not path.exists(run_variables["compare_with_blast"]):
     print("Running: compare_with_blast.py")
     compare_with_blast.main(run_variables)

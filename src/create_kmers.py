@@ -19,7 +19,7 @@ def main(run_variables):
             if ">" in line:
                 continue
 
-            kmers = make_kmers(line.strip(), 4)
+            kmers = make_kmers(line.strip(), run_variables["kmer_len"])
             print(" ".join(kmers), file=out_file)
             print(i)
 
