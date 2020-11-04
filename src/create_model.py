@@ -16,8 +16,6 @@ logging.basicConfig(
 )
 
 def main(run_variables):
-    output_file_name = f"intermediate_data/uniprot_sprot_4_kmers_{run_variables['filename_suffix']}.csv"
-
     n_cores = 4
     seed = 423
     # seed = 564 #original seed

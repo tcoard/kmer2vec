@@ -11,12 +11,12 @@ from sklearn.metrics.pairwise import cosine_similarity
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
-def main():
+def main(run_variables):
     num_seq_comparing = 100
     random.seed(1)
     num_scores_to_save = 100
     # flat[0] because np.save saves as an array
-    id_norm_vec = np.load("id_norm_vec.npy", allow_pickle=True).flat[0]
+    id_norm_vec = np.load(run_variables["normalize_seq_out"], allow_pickle=True).flat[0]
     random_ids = random.sample(list(id_norm_vec), num_seq_comparing)
 
     with open(run_variables["query_model_out"], "w") as out_file, open(

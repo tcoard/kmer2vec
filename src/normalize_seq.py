@@ -50,12 +50,12 @@ def avg_seq_vector(words, model, num_features):
 
 def main(run_variables):
     """normalize sequences and make a ID -> normalized vector dict"""
-    model = gensim.models.Word2Vec.load("run_variables['create_model_out']")
+    model = gensim.models.Word2Vec.load(run_variables['create_model_out'])
     # TODO make a better name for this var
     id_norm_vec = dict()
     # get all of the kmer-ed sequences
     with open(run_variables["create_kmers_out"], "r") as kmer_file, open(
-        run_variables["normalize_seq_out"], "w"
+        run_variables["normalize_seq_err"], "w"
     ) as error:
         for i, kmer_seq in enumerate(kmer_file):
             kmer_seq = kmer_seq.split()
@@ -76,7 +76,7 @@ def main(run_variables):
                 "seq": seq,
             }
 
-    np.save(run_variables["normalize_seq_vec"], id_norm_vec)
+    np.save(run_variables["normalize_seq_out"], id_norm_vec)
 
 
 if __name__ == "__main__":
