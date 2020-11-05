@@ -183,13 +183,13 @@ def main(run_variables):
 
         final["Averages"] = dict()
         final["Averages"]["Kendall's W"] = round(
-            kendall_t_avg / float(max_num_to_save), 3
+            kendall_t_avg / float(len(match_data)), 3
         )
         final["Averages"]["Kendall's Tau"] = round(
-            kendall_w_avg / float(max_num_to_save), 3
+            kendall_w_avg / float(len(match_data)), 3
         )
         final["Averages"]["Shared Percentage"] = round(
-            shared_percent_avg / float(max_num_to_save), 3
+            shared_percent_avg / float(len(match_data)), 3
         )
         print(json.dumps(final, indent=2, sort_keys=True), file=out_file)
 
