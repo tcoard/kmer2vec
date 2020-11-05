@@ -10,7 +10,7 @@ from matplotlib import pyplot as plt
 
 
 def get_lims(data):
-    buffer_len = max(data) * 0.01
+    buffer_len = (max(data) - min(data)) * 0.1
     lower_lim = min(data) - buffer_len
     upper_lim = max(data) + buffer_len
     return lower_lim, upper_lim
@@ -90,6 +90,8 @@ def main(run_variables):
                 hits = blast_data["BlastOutput2"]["report"]["results"]["search"]["hits"]
                 # hits - 1 because we will be removing the original ID from the search result
                 num_to_save = min(len(hits) - 1, max_num_to_save)
+                if num_to_save == 0:
+                    continue
                 bit_id_score = dict()
                 e_id_score = dict()
                 for hit in hits:
@@ -223,7 +225,7 @@ def main(run_variables):
         axs[1][2].set_xlabel("Blast E Values")
         axs[1][2].set_ylabel("Kmer2Vec Cosine Similarity")
         axs[1][2].scatter(e_values, sorted_our_scores_e, marker=".")
-        fig.savefig("plotted_data.png")
+        fig.savefig(run_variables["plotted_data"])
 
 
 if __name__ == "__main__":
