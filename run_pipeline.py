@@ -1,4 +1,4 @@
-from os import path, mkdir
+from os import path, mkdir, stat
 from src import (
     compare_with_blast,
     create_kmers,
@@ -47,7 +47,7 @@ else:
 # use model to create matches
 run_variables["query_model_out"] = f"{output_dir}matches.json"
 run_variables["query_model_err"] = f"{output_dir}query_model.errors"
-if not path.exists(run_variables["query_model_out"]):
+if not path.exists(run_variables["query_model_out"]) or stat(run_variables["query_model_out"]).st_size == 0:
     print("Running: query_model.py")
     query_model.main(run_variables)
 else:
@@ -58,8 +58,8 @@ else:
 # TODO: Write checks for blast and R and and R packages that we are using
 run_variables["compare_with_blast"] = f"{output_dir}matches_compared.json"
 run_variables["plotted_data"] = f"{output_dir}plotted_data.png"
-
-if not path.exists(run_variables["compare_with_blast"]):
+# if not path.exists(run_variables["compare_with_blast"]):
+if not path.exists(run_variables["plotted_data"]) or stat(run_variables["plotted_data"]).st_size == 0:
     print("Running: compare_with_blast.py")
     compare_with_blast.main(run_variables)
 else:
