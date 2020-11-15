@@ -7,6 +7,7 @@ import csv
 
 # from scipy.stats import spearmanr, kendalltau
 from scipy.special import comb
+from scipy.stats import kendalltau, spearmanr
 from matplotlib import pyplot as plt
 
 
@@ -40,7 +41,9 @@ def rank_data(their_data, our_data):
     # our data and their data are the same length
     kendall_t = 0
     if float(comb(len(our_ranked_data), 2)) != 0:
-        kendall_t = float(concordant - discordant) / float(comb(len(our_ranked_data), 2))
+        kendall_t = float(concordant - discordant) / float(
+            comb(len(our_ranked_data), 2)
+        )
     return our_ranked_data, kendall_t
 
 
@@ -60,7 +63,9 @@ def main(run_variables):
         fname = f"{seq}.out"
         # TODO I am not sure which file is the most important, I am chose .pin randomly
         if not os.path.exists("exp_protein_sequences.fasta.pin"):
-            os.system('makeblastdb -in "exp_protein_sequences.fasta" -dbtype prot -parse_seqids')
+            os.system(
+                'makeblastdb -in "exp_protein_sequences.fasta" -dbtype prot -parse_seqids'
+            )
         # if we have not run blast for this sequence before, do so
         if not os.path.exists(f"blast_files/{fname}"):
             # this is nasty and should be scripted differently
@@ -80,41 +85,43 @@ def main(run_variables):
                 if row[0].startswith("#") or row[1] == seq:
                     continue
                 if match_data[seq].get(row[1]):
-                    final[seq].update({str(row[1]): {"seq_sim": row[2], "cos_sim": match_data[seq].get(row[1], -1)}})
+                    final[seq].update(
+                        {
+                            str(row[1]): {
+                                "seq_sim": row[2],
+                                "cos_sim": match_data[seq].get(row[1], -1),
+                                "bit_score": row[-1],
+                                "e_value": row[-2],
+                            }
+                        }
+                    )
                 else:
                     error_count += 1
 
-            # num_to_save = min(len(hits) - 1, max_num_to_save)
-            # if num_to_save == 0:
-            #     continue
-
-
-        # our_scores = [seq["id"] for seq in seq["scores"] if seq["id"] != orig_seq_id][0:num_to_save]
-
-        # blast_ids = [
-        #     hit["description"][0]["accession"]
-        #     for hit in hits
-        #     if hit["description"][0]["accession"] != orig_seq_id
-        # ][0:num_to_save]
-
-    # fig, axs = plt.subplots(1, 2, sharey=True, tight_layout=True)
     seq_sims = list()
     cos_sims = list()
-    seq_sims_ge90 = list()
-    cos_sims_ge90 = list()
-    seq_sims_ge10 = list()
-    cos_sims_ge10 = list()
+    bit_scores = list()
+    e_values = list()
+    seq_sims_ge80 = list()
+    cos_sims_ge80 = list()
+    seq_sims_le20 = list()
+    cos_sims_le20 = list()
 
     for seq in final:
         for subseq in final[seq]:
             seq_sims.append(float(final[seq][subseq]["seq_sim"]))
             cos_sims.append(float(final[seq][subseq]["cos_sim"]))
-        if seq_sims.append(float(final[seq][subseq]["seq_sim"])) >= 90:
-            seq_sims_ge90.append(float(final[seq][subseq]["seq_sim"]))
-            cos_sims_ge90.append(float(final[seq][subseq]["cos_sim"]))
-        elif seq_sims.append(float(final[seq][subseq]["seq_sim"])) <= 10:
-            seq_sims_lel0.append(float(final[seq][subseq]["seq_sim"]))
-            cos_sims_lel0.append(float(final[seq][subseq]["cos_sim"]))
+            bit_scores.append(float(final[seq][subseq]["bit_score"]))
+            e_values.append(float(final[seq][subseq]["e_value"]))
+            if float(final[seq][subseq]["seq_sim"]) >= 80:
+                seq_sims_ge80.append(float(final[seq][subseq]["seq_sim"]))
+                cos_sims_ge80.append(float(final[seq][subseq]["cos_sim"]))
+            elif float(final[seq][subseq]["seq_sim"]) <= 20:
+                seq_sims_le20.append(float(final[seq][subseq]["seq_sim"]))
+                cos_sims_le20.append(float(final[seq][subseq]["cos_sim"]))
+
+    print(kendalltau(seq_sims, cos_sims))
+    print(spearmanr(seq_sims, cos_sims))
 
     seq_lims = get_lims(seq_sims)
     cos_lims = get_lims(cos_sims)
@@ -123,71 +130,84 @@ def main(run_variables):
     fig, axs = plt.subplots(3, 3, tight_layout=True)
     axs[0][0].hist(seq_sims, bins=n_bins)
     axs[0][0].set_xlim(seq_lims)
-    axs[0][0].set_xlabel("Sequence Simularity")
+    axs[0][0].set_xlabel("Seq Simularity")
     axs[0][0].set_ylabel("Frequency")
     axs[0][1].hist(cos_sims, bins=n_bins)
     axs[0][1].set_xlim(cos_lims)
-    axs[0][1].set_xlabel("Kmer2Vec Cosine Similarity")
+    axs[0][1].set_xlabel("Cosine Similarity")
     axs[0][1].set_ylabel("Frequency")
     axs[0][2].set_xlim(seq_lims)
     axs[0][2].set_ylim(cos_lims)
-    axs[0][2].set_xlabel("Sequence Simularity")
-    axs[0][2].set_ylabel("Kmer2Vec Cosine Similarity")
+    axs[0][2].set_xlabel("Seq Simularity")
+    axs[0][2].set_ylabel("Cosine Similarity")
     axs[0][2].scatter(seq_sims, cos_sims, marker=".")
 
+    seq_lims = get_lims(seq_sims_ge80)
+    cos_lims = get_lims(cos_sims_ge80)
+    axs[1][0].hist(seq_sims_ge80, bins=n_bins)
+    axs[1][0].set_xlim(seq_lims)
+    axs[1][0].set_xlabel("Seq Simularity >=80")
+    axs[1][0].set_ylabel("Frequency")
+    axs[1][1].hist(cos_sims_ge80, bins=n_bins)
+    axs[1][1].set_xlim(cos_lims)
+    axs[1][1].set_xlabel("Cos Sim (Seq >= 80)")
+    axs[1][1].set_ylabel("Frequency")
+    axs[1][2].set_xlim(seq_lims)
+    axs[1][2].set_ylim(cos_lims)
+    axs[1][2].set_xlabel("Seq Simularity >=80")
+    axs[1][2].set_ylabel("Cos Sim (Seq >= 80)")
+    axs[1][2].scatter(seq_sims_ge80, cos_sims_ge80, marker=".")
 
-    seq_lims = get_lims(seq_sims_ge90)
-    cos_lims = get_lims(cos_sims_ge90)
-    axs[0][0].hist(seq_sims_ge90, bins=n_bins)
-    axs[0][0].set_xlim(seq_lims)
-    axs[0][0].set_xlabel("Sequence Simularity >=90")
-    axs[0][0].set_ylabel("Frequency")
-    axs[0][1].hist(cos_sims_ge90, bins=n_bins)
-    axs[0][1].set_xlim(cos_lims)
-    axs[0][1].set_xlabel("Kmer2Vec Cosine Similarity")
-    axs[0][1].set_ylabel("Frequency")
-    axs[0][2].set_xlim(seq_lims)
-    axs[0][2].set_ylim(cos_lims)
-    axs[0][2].set_xlabel("Sequence Simularity >=90")
-    axs[0][2].set_ylabel("Kmer2Vec Cosine Similarity")
-    axs[0][2].scatter(seq_sims_ge90, cos_sims_ge90, marker=".")
+    seq_lims = get_lims(seq_sims_le20)
+    cos_lims = get_lims(cos_sims_le20)
+    axs[2][0].hist(seq_sims_le20, bins=n_bins)
+    axs[2][0].set_xlim(seq_lims)
+    axs[2][0].set_xlabel("Seq Simularity <= 20")
+    axs[2][0].set_ylabel("Frequency")
+    axs[2][1].hist(cos_sims_le20, bins=n_bins)
+    axs[2][1].set_xlim(cos_lims)
+    axs[2][1].set_xlabel("Cos Sim (Seq <= 20)")
+    axs[2][1].set_ylabel("Frequency")
+    axs[2][2].set_xlim(seq_lims)
+    axs[2][2].set_ylim(cos_lims)
+    axs[2][2].set_xlabel("Seq Simularity <= 20")
+    axs[2][2].set_ylabel("Cos Sim (Seq <= 20)")
+    axs[2][2].scatter(seq_sims_le20, cos_sims_le20, marker=".")
 
+    # seq_lims = get_lims(seq_sims)
+    # bit_lims = get_lims(bit_scores)
+    # axs[3][0].hist(seq_sims, bins=n_bins)
+    # axs[3][0].set_xlim(seq_lims)
+    # axs[3][0].set_xlabel("Seq Simularity")
+    # axs[3][0].set_ylabel("Frequency")
+    # axs[3][1].hist(bit_scores, bins=n_bins)
+    # axs[3][1].set_xlim(bit_lims)
+    # axs[3][1].set_xlabel("Bit Scores")
+    # axs[3][1].set_ylabel("Frequency")
+    # axs[3][2].set_xlim(seq_lims)
+    # axs[3][2].set_ylim(bit_lims)
+    # axs[3][2].set_xlabel("Seq Simularity")
+    # axs[3][2].set_ylabel("Bit Scores")
+    # axs[3][2].scatter(seq_sims, bit_scores, marker=".")
 
-    seq_lims = get_lims(seq_sims_le10)
-    cos_lims = get_lims(cos_sims_le10)
-    axs[0][0].hist(seq_sims_le10, bins=n_bins)
-    axs[0][0].set_xlim(seq_lims)
-    axs[0][0].set_xlabel("Sequence Simularity <= 10")
-    axs[0][0].set_ylabel("Frequency")
-    axs[0][1].hist(cos_sims_le10, bins=n_bins)
-    axs[0][1].set_xlim(cos_lims)
-    axs[0][1].set_xlabel("Kmer2Vec Cosine Similarity")
-    axs[0][1].set_ylabel("Frequency")
-    axs[0][2].set_xlim(seq_lims)
-    axs[0][2].set_ylim(cos_lims)
-    axs[0][2].set_xlabel("Sequence Simularity <= 10")
-    axs[0][2].set_ylabel("Kmer2Vec Cosine Similarity")
-    axs[0][2].scatter(seq_sims_le10, cos_sims_le10, marker=".")
-
+    # seq_lims = get_lims(seq_sims)
+    # e_lims = get_lims(e_values)
+    # axs[4][0].hist(seq_sims, bins=n_bins)
+    # axs[4][0].set_xlim(seq_lims)
+    # axs[4][0].set_xlabel("Seq Simularity")
+    # axs[4][0].set_ylabel("Frequency")
+    # axs[4][1].hist(e_values, bins=n_bins)
+    # axs[4][1].set_xlim(e_lims)
+    # axs[4][1].set_xlabel("E Values")
+    # axs[4][1].set_ylabel("Frequency")
+    # axs[4][2].set_xlim(seq_lims)
+    # axs[4][2].set_ylim(e_lims)
+    # axs[4][2].set_xlabel("Seq Simularity")
+    # axs[4][2].set_ylabel("E Values")
+    # axs[4][2].scatter(seq_sims, e_values, marker=".")
 
     print("Errors:", error_count)
 
-    # axs[1][0].hist(e_values, bins=n_bins)
-    # axs[1][0].set_xlim(e_lims)
-    # axs[1][0].set_xlabel("Blast E Values")
-    # axs[1][0].set_ylabel("Frequency")
-
-    # axs[1][1].set_xlim(s_lims)
-    # axs[1][1].set_ylim(our_lims)
-    # axs[1][1].set_xlabel("Seq % Values")
-    # axs[1][1].set_ylabel("Kmer2Vec Cosine Similarity")
-    # axs[1][1].scatter(e_values, sorted_our_scores_e, marker=".")
-
-    # axs[1][2].set_xlim(e_lims)
-    # axs[1][2].set_ylim(our_lims)
-    # axs[1][2].set_xlabel("Blast E Values")
-    # axs[1][2].set_ylabel("Kmer2Vec Cosine Similarity")
-    # axs[1][2].scatter(e_values, sorted_our_scores_e, marker=".")
     fig.savefig(run_variables["plotted_data"])
 
 
